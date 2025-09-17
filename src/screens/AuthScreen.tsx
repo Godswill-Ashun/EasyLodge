@@ -1,24 +1,35 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import auth from '@react-native-firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@react-native-firebase/auth';
 
-export default function AuthScreen() {
+export default function AuthScreen({ navigation }: any) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const auth = getAuth();
 
   const handleSignUp = async () => {
+    if (!email || !password) {
+      Alert.alert('Error', 'Please enter email and password');
+      return;
+    }
     try {
-      await auth().createUserWithEmailAndPassword(email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
       Alert.alert('Success', 'Account created!');
+      navigation.replace('HomeScreen');
     } catch (error: any) {
       Alert.alert('Error', error.message);
     }
   };
 
   const handleSignIn = async () => {
+    if (!email || !password) {
+      Alert.alert('Error', 'Please enter email and password');
+      return;
+    }
     try {
-      await auth().signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       Alert.alert('Success', 'Logged in!');
+      navigation.replace('HomeScreen');
     } catch (error: any) {
       Alert.alert('Error', error.message);
     }
