@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089155533728",
+    "project_id": "easylodgeapp",
+    "storage_bucket": "easylodgeapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089155533728:android:5e28ea29c91e9c2e6572c5",
+        "android_client_info": {
+          "package_name": "com.easylodge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3WVIEmgcP8RtjpQ6HHeMouD_8df6gSmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
